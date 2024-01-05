@@ -22,7 +22,7 @@ const Footer = () => {
             </button>
           </div>
 
-          <div className="flex items-end justify-between gap-5 mt-20">
+          <div className=" flex flex-col-reverse justify-center items-center gap-12 sm:flex  sm:items-end sm:justify-between sm:gap-5 sm:mt-20">
             <div className="">
               <p className="text-2xl font-extrabold ">
                 pti<span style={{ color: "#FC6011" }}>.</span>
