@@ -12,7 +12,7 @@ const HomeTop = () => {
             Authentic Food, Quick Service, Fast Delivery
           </p>
         </div>
-        <div className="md:bg-custom-yellow bg-custom-orange rounded-3xl relative w-full h-64 mt-14 ">
+        <div className="md:bg-custom-yellow bg-custom-orange rounded-3xl relative w-full h-64 mt-14  ">
           <img src="/Image1.png" alt="" className=" absolute top-[-66px] w-full h-[20rem]" />
         </div>
       </div>
