@@ -5,7 +5,7 @@ const HomeTop = () => {
     <div className="py-10">
       <div className="rounded-3xl md:bg-custom-yellow md:flex md:items-center ">
         <div className="md:ml-10 md:text-white">
-          <p className="text-center text-5xl font-semibold mx-3 md:text-3xl  md:text-left ">
+          <p className="text-center text-3xl font-semibold mx-3 md:text-3xl  md:text-left ">
             Deliver Food To Your Door Step
           </p>
           <p className="text-center mt-3 md:text-left md:ml-3">

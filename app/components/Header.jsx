@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Combobox } from "@headlessui/react";
+import { CiSearch } from "react-icons/ci";
+import { CiUser } from "react-icons/ci";
 
 const menu = [
   { id: 1, name: "Home" },
@@ -32,23 +34,25 @@ const Header = () => {
         });
   return (
     <>
-      <div className="flex justify-between items-center py-4">
+      <div className="flex justify-between items-center pt-4 pb-7 gap-4">
         <div className="">
           <h1 className="text-3xl font-bold ml-3">pti.</h1>
         </div>
-        <div className="flex gap-2 items-center justify-between ">
-          <div className=" w-full ">
+        <div className="flex gap-1 items-center justify-between ">
+          <div className="w-full relative">
             <input
               type="text"
-              placeholder="Search Food"
-              className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 mt-2"
+              placeholder="    Search Food"
+              className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 mt-2  "
             />
+            <CiSearch className=" absolute top-4 left-2 " size={20} color="orange" />
           </div>
+
           <div>
             <Combobox as="div" value={selectedMenu} onChange={setSelectedMenu}>
               <div className="relative mt-2">
                 <Combobox.Input
-                  className="w-48 rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 "
+                  className="w-40 rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 "
                   onChange={(event) => setQuery(event.target.value)}
                   displayValue={(person) => person?.name}
                   readOnly
@@ -96,8 +100,11 @@ const Header = () => {
             </Combobox>
           </div>
         </div>
+        <div className="bg-orange-400 p-2 rounded-full hidden md:block">
+          <CiUser size={25} color="white" />
+        </div>
       </div>
-      <div className="border my-2"></div>
+      <div className="md:hidden border my-2"></div>
     </>
   );
 };
