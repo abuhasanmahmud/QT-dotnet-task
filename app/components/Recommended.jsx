@@ -11,9 +11,8 @@ import "swiper/css/pagination";
 
 import SwiperNavButton from "./SwiperNavButton";
 import AddItemModal from "./AddItemModal";
-import { Bars } from "react-loader-spinner";
 
-const Popular = () => {
+const Recommended = () => {
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
   const swiperParams = {
@@ -33,58 +32,41 @@ const Popular = () => {
 
     fetchData();
   }, []);
-  console.log("data", data?.Items?.length);
+  console.log("data", data);
+
   return (
-    <div className="py-10">
+    <div className="pb-10">
       <AddItemModal open={open} setOpen={setOpen} />
       <div className="flex justify-between items-center pb-7">
-        <p className="">Popular</p>
+        <p className="">Recommended</p>
         <button onClick={() => setOpen(true)} className="text-orange-600 pointer">
           AddMore
         </button>
       </div>
       {/* desktop */}
-      {data?.Items?.length == null ? (
-        <>
-          <div className="w-1/2 mx-auto">
-            <Bars
-              height="80"
-              width="80"
-              color="#4fa94d"
-              ariaLabel="bars-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            />
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="lg:block hidden relative">
-            <Swiper
-              // install Swiper modules
-              modules={[Navigation, Pagination, A11y]}
-              spaceBetween={14}
-              slidesPerView={5}
-              // navigation
-              pagination={{ clickable: true }}
-              //         scrollbar={{ draggable: true }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
-            >
-              <div className="my-10">{/* <SwiperNavButton /> */}</div>
-              {data?.Items?.map((i) => (
-                <SwiperSlide>
-                  <div className="">
-                    <img src={i?.ImageUrl} alt="" className="w-60 h-40 " />
-                    <p className="my-2 text-center">{i?.Name}</p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </>
-      )}
+      <div className="lg:block hidden relative">
+        <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={14}
+          slidesPerView={5}
+          // navigation
+          pagination={{ clickable: true }}
+          //         scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          <div className="my-10">{/* <SwiperNavButton /> */}</div>
+          {data?.Items?.slice(1, 8).map((i) => (
+            <SwiperSlide>
+              <div className="">
+                <img src={i?.ImageUrl} alt="" className="w-60 h-40 " />
+                <p className="my-2 text-center">{i?.Name}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
       {/* tablet */}
       <div className="md:block lg:hidden ">
         <Swiper
@@ -115,4 +97,4 @@ const Popular = () => {
   );
 };
 
-export default Popular;
+export default Recommended;

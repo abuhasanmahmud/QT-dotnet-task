@@ -12,7 +12,7 @@ const AddItemModal = ({ open, setOpen }) => {
   const cancelButtonRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
   const [dataArray, setDataArray] = useState([]);
-  console.log("dataarray..", dataArray);
+  //   console.log("dataarray..", dataArray);
   useEffect(() => {
     // Load existing data array from cookies on component mount
     const loadedDataArray = Cookies.get("dataArray") || [];
