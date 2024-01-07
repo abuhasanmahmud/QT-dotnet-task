@@ -39,7 +39,7 @@ const Header = () => {
           <h1 className="text-3xl font-bold ml-3">pti.</h1>
         </div>
         <div className="flex gap-1 items-center justify-between ">
-          <div className="w-full relative">
+          <div className="lg:w-96 md:w-80 w-full relative">
             <input
               type="text"
               placeholder="    Search Food"

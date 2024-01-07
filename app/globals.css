@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.topHomeBg {
-  background-color: "#F99F1C";
+.swiper-nav-btns button {
+  width: 60px;
+  height: 50px;
 }
