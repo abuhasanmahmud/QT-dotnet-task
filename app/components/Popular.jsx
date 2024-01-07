@@ -36,6 +36,7 @@ const Popular = () => {
     fetchData();
   }, []);
   console.log("data", data?.Items?.length);
+
   return (
     <div className="py-10">
       <AddItemModal open={open} setOpen={setOpen} />
