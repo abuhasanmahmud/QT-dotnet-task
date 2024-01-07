@@ -10,9 +10,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import SwiperNavButton from "./SwiperNavButton";
+import AddItemModal from "./AddItemModal";
 
 const Popular = () => {
   const [data, setData] = useState(null);
+  const [open, setOpen] = useState(false);
   const swiperParams = {
     navigation: {
       nextEl: ".swiper-button-next",
@@ -33,7 +35,13 @@ const Popular = () => {
   console.log("data", data);
   return (
     <div className="py-10">
-      <p className="">Popular</p>
+      <AddItemModal open={open} setOpen={setOpen} />
+      <div className="flex justify-between items-center pb-7">
+        <p className="">Popular</p>
+        <button onClick={() => setOpen(true)} className="text-orange-600 pointer">
+          AddMore
+        </button>
+      </div>
       {/* desktop */}
       <div className="lg:block hidden relative">
         <Swiper
