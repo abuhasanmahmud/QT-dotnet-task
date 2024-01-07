@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import Image from "next/image";
 
 // Import Swiper styles
 import "swiper/css";
@@ -79,6 +80,8 @@ const Popular = () => {
                 <SwiperSlide>
                   <div className="">
                     <img src={i?.ImageUrl} alt="" className="w-60 h-40 " />
+
+                    {/* <Image src={i?.ImageUrl} width={500} height={300} /> */}
                     <p className="my-2 text-center">{i?.Name}</p>
                   </div>
                 </SwiperSlide>
