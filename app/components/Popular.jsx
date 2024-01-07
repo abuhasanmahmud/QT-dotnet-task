@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import SwiperNavButton from "./SwiperNavButton";
 import AddItemModal from "./AddItemModal";
 import { Bars } from "react-loader-spinner";
+import items from "../lib/items";
 
 const Popular = () => {
   const [data, setData] = useState(null);
@@ -44,7 +45,7 @@ const Popular = () => {
         </button>
       </div>
       {/* desktop */}
-      {data?.Items?.length == null ? (
+      {items?.length == null ? (
         <>
           <div className="w-1/2 mx-auto">
             <Bars
@@ -73,7 +74,8 @@ const Popular = () => {
               onSlideChange={() => console.log("slide change")}
             >
               <div className="my-10">{/* <SwiperNavButton /> */}</div>
-              {data?.Items?.map((i) => (
+              {/* {data?.Items?.map((i) => ( */}
+              {items?.map((i) => (
                 <SwiperSlide>
                   <div className="">
                     <img src={i?.ImageUrl} alt="" className="w-60 h-40 " />
