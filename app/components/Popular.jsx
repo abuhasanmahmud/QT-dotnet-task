@@ -104,10 +104,11 @@ const Popular = () => {
           onSlideChange={() => console.log("slide change")}
         >
           <div className="my-10">{/* <SwiperNavButton /> */}</div>
-          {data?.Items?.map((i) => (
+          {items?.map((i) => (
             <SwiperSlide>
               <div className="">
-                <img src={i?.ImageUrl} alt="  " className=" w-60 h-40 " />
+                {/* <img src={i?.ImageUrl} alt="  " className=" w-60 h-40 " /> */}
+                <Image src={i?.ImageUrl} className="w-60 h-40 " width={300} height={100} />
                 <p className="my-2 text-center">{i?.Name}</p>
               </div>
             </SwiperSlide>
